@@ -60,21 +60,52 @@ routePoints.forEach(p => {
 
 // body trasy (ukázka – nahraď vlastními souřadnicemi)
 var routeCoords = [
-  [50.0903,14.3989], // Pražský hrad
-  [50.0908,14.4020], // Zámecké schody
-  [50.0915,14.4035], // Klarov
-  [50.0922,14.4060], // Park Holubička
-  [50.0928,14.4080], // Metro Malostranská
-  [50.0930,14.4095], // Klárov
-  [50.0935,14.4105], // Lužického semináře
-  [50.0940,14.4110], // Cihelná
-  [50.0945,14.4115], // Lužického semináře
-  [50.0950,14.4120], // Kampa
-  [50.0865,14.4125], // Karlův most
-  [50.0860,14.4140], // Klementinum
-  [50.0868,14.4170], // Mariánské náměstí
-  [50.0875,14.4212], // Staroměstské náměstí
-  [50.0810,14.4260]  // Václavské náměstí
+  // Pražský hrad
+  [50.0903,14.3989],
+  // Zámecké schody
+  [50.0908,14.4020],
+  // Klarov
+  [50.0915,14.4035],
+  // Park Holubička
+  [50.0922,14.4060],
+  // Metro Malostranská
+  [50.0928,14.4080],
+  // Klárov
+  [50.0930,14.4095],
+  // Lužického semináře (1. průchod)
+  [50.0935,14.4105],
+  // Cihelná
+  [50.0940,14.4110],
+  // Lužického semináře (2. průchod, jiný bod než předchozí)
+  [50.0945,14.4115],
+  // Kampa
+  [50.0950,14.4120],
+  // Karlův most (začátek)
+  [50.0865,14.4125],
+  // Karlův most (konec)
+  [50.0860,14.4135],
+  // Klementinum (vstupní bod)
+  [50.0860,14.4140],
+  // Mariánské náměstí
+  [50.0868,14.4170],
+  // Platnéřská
+  [50.0870,14.4180],
+  // Žatecká
+  [50.0872,14.4190],
+  // Široká
+  [50.0874,14.4200],
+  // Maislova
+  [50.0875,14.4210],
+  // Náměstí France Kafky
+  [50.0876,14.4215],
+  // Staroměstské náměstí
+  [50.0875,14.4212],
+  // Melantrichova
+  [50.0865,14.4215],
+  // Na Můstku
+  [50.0855,14.4220],
+  // Václavské náměstí
+  [50.0810,14.4260]
 ];
 
 // vykreslení polyline
@@ -95,5 +126,6 @@ poiPoints.forEach(p => {
     .addTo(map)
     .bindPopup(p.content);
 });
+
 
 
