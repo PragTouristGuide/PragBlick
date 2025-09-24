@@ -63,7 +63,7 @@ var routeCoords = [
   // Václavské náměstí
   [50.082383,14.426169],
   // Na Můstku
-  [50.0855,14.4220],
+  [50.084875, 14.422195],
   // Melantrichova
   [50.085309, 14.421289],
   // Melantrichova
@@ -117,6 +117,7 @@ poiPoints.forEach(p => {
     .addTo(map)
     .bindPopup(p.content);
 });
+
 
 
 
