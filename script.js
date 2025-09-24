@@ -60,52 +60,42 @@ routePoints.forEach(p => {
 
 // body trasy (ukázka – nahraď vlastními souřadnicemi)
 var routeCoords = [
-  // Pražský hrad
-  [50.0903,14.3989],
-  // Zámecké schody
-  [50.0908,14.4020],
-  // Klarov
-  [50.0915,14.4035],
-  // Park Holubička
-  [50.0922,14.4060],
-  // Metro Malostranská
-  [50.0928,14.4080],
-  // Klárov
-  [50.0930,14.4095],
-  // Lužického semináře (1. průchod)
-  [50.0935,14.4105],
-  // Cihelná
-  [50.0940,14.4110],
-  // Lužického semináře (2. průchod, jiný bod než předchozí)
-  [50.0945,14.4115],
-  // Kampa
-  [50.0950,14.4120],
-  // Karlův most (začátek)
-  [50.0865,14.4125],
-  // Karlův most (konec)
-  [50.0860,14.4135],
-  // Klementinum (vstupní bod)
-  [50.0860,14.4140],
-  // Mariánské náměstí
-  [50.0868,14.4170],
-  // Platnéřská
-  [50.0870,14.4180],
-  // Žatecká
-  [50.0872,14.4190],
-  // Široká
-  [50.0874,14.4200],
-  // Maislova
-  [50.0875,14.4210],
-  // Náměstí France Kafky
-  [50.0876,14.4215],
-  // Staroměstské náměstí
-  [50.0875,14.4212],
-  // Melantrichova
-  [50.0865,14.4215],
+  // Václavské náměstí
+  [50.0810,14.4260],
   // Na Můstku
   [50.0855,14.4220],
-  // Václavské náměstí
-  [50.0810,14.4260]
+  // Melantrichova
+  [50.0865,14.4215],
+  // Staroměstské náměstí
+  [50.0875,14.4212],
+  // Náměstí France Kafky
+  [50.0876,14.4215],
+  // Maislova
+  [50.0875,14.4210],
+  // Široká
+  [50.0874,14.4200],
+  // Žatecká
+  [50.0872,14.4190],
+  // Platnéřská
+  [50.0870,14.4180],
+  // Mariánské náměstí
+  [50.0868,14.4170],
+  // Klementinum
+  [50.0860,14.4140],
+  // Karlův most (začátek)
+  [50.0860,14.4135],
+  // Karlův most (konec)
+  [50.0865,14.4125],
+  // Mostecká
+  [50.0868,14.4115],
+  // Malostranské náměstí
+  [50.0872,14.4105],
+  // Thunovská
+  [50.0875,14.4095],
+  // Nové zámecké schody
+  [50.0880,14.4040],
+  // Pražský hrad
+  [50.0903,14.3989]
 ];
 
 // vykreslení polyline
@@ -113,7 +103,6 @@ var polyline = L.polyline(routeCoords, {color: 'red', weight: 4}).addTo(map);
 
 // nastavení mapy tak, aby zahrnula celou trasu
 map.fitBounds(polyline.getBounds());
-
 
 // Další body (kavárny, restaurace)
 const poiPoints = [
@@ -126,6 +115,7 @@ poiPoints.forEach(p => {
     .addTo(map)
     .bindPopup(p.content);
 });
+
 
 
 
