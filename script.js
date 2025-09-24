@@ -10,7 +10,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 const routePoints = [
   {
     name: "Václavské náměstí",
-    coords: [50.081,14.426],
+    coords: [50.082383,14.426169],
     video: "YOUTUBE_ID_1",
     audio: "audio/vaclavske.mp3",
     more: "https://mojedomena.cz/vaclavske"
@@ -115,6 +115,7 @@ poiPoints.forEach(p => {
     .addTo(map)
     .bindPopup(p.content);
 });
+
 
 
 
