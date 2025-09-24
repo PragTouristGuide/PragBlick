@@ -60,12 +60,16 @@ routePoints.forEach(p => {
 
 // Vykreslení trasy (po ulicích)
 L.Routing.control({
-  waypoints: routePoints.map(p => L.latLng(p.coords)),
-  lineOptions: { styles: [{color: 'red', weight: 4}] },
-  createMarker: () => null,
-  show: false,
-  addWaypoints: false,
-  routeWhileDragging: false
+  waypoints: points.map(p => L.latLng(p.coords)),
+  router: L.Routing.osrmv1({
+    serviceUrl: 'https://router.project-osrm.org/route/v1'
+  }),
+  createMarker: function() { return null; },
+  lineOptions: {
+    styles: [{color: 'red', weight: 4}]
+  },
+  routeWhileDragging: false,
+  addWaypoints: false
 }).addTo(map);
 
 // Další body (kavárny, restaurace)
@@ -79,3 +83,4 @@ poiPoints.forEach(p => {
     .addTo(map)
     .bindPopup(p.content);
 });
+
