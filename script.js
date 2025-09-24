@@ -58,19 +58,31 @@ routePoints.forEach(p => {
   `);
 });
 
-// Vykreslení trasy (po ulicích)
-L.Routing.control({
-  waypoints: points.map(p => L.latLng(p.coords)),
-  router: L.Routing.osrmv1({
-    serviceUrl: 'https://router.project-osrm.org/route/v1'
-  }),
-  createMarker: function() { return null; },
-  lineOptions: {
-    styles: [{color: 'red', weight: 4}]
-  },
-  routeWhileDragging: false,
-  addWaypoints: false
-}).addTo(map);
+// body trasy (ukázka – nahraď vlastními souřadnicemi)
+var routeCoords = [
+  [50.0903,14.3989], // Pražský hrad
+  [50.0908,14.4020], // Zámecké schody
+  [50.0915,14.4035], // Klarov
+  [50.0922,14.4060], // Park Holubička
+  [50.0928,14.4080], // Metro Malostranská
+  [50.0930,14.4095], // Klárov
+  [50.0935,14.4105], // Lužického semináře
+  [50.0940,14.4110], // Cihelná
+  [50.0945,14.4115], // Lužického semináře
+  [50.0950,14.4120], // Kampa
+  [50.0865,14.4125], // Karlův most
+  [50.0860,14.4140], // Klementinum
+  [50.0868,14.4170], // Mariánské náměstí
+  [50.0875,14.4212], // Staroměstské náměstí
+  [50.0810,14.4260]  // Václavské náměstí
+];
+
+// vykreslení polyline
+var polyline = L.polyline(routeCoords, {color: 'red', weight: 4}).addTo(map);
+
+// nastavení mapy tak, aby zahrnula celou trasu
+map.fitBounds(polyline.getBounds());
+
 
 // Další body (kavárny, restaurace)
 const poiPoints = [
@@ -83,4 +95,5 @@ poiPoints.forEach(p => {
     .addTo(map)
     .bindPopup(p.content);
 });
+
 
