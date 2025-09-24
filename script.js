@@ -61,7 +61,7 @@ routePoints.forEach(p => {
 // body trasy (ukázka – nahraď vlastními souřadnicemi)
 var routeCoords = [
   // Václavské náměstí
-  [50.0810,14.4260],
+  [50.082383,14.426169],
   // Na Můstku
   [50.0855,14.4220],
   // Melantrichova
@@ -115,6 +115,7 @@ poiPoints.forEach(p => {
     .addTo(map)
     .bindPopup(p.content);
 });
+
 
 
 
