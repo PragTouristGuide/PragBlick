@@ -65,6 +65,8 @@ var routeCoords = [
   // Na Můstku
   [50.0855,14.4220],
   // Melantrichova
+  [50.085309, 14.421289],
+  // Melantrichova
   [50.0865,14.4215],
   // Staroměstské náměstí
   [50.0875,14.4212],
@@ -115,6 +117,7 @@ poiPoints.forEach(p => {
     .addTo(map)
     .bindPopup(p.content);
 });
+
 
 
 
