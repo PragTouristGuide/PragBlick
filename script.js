@@ -24,7 +24,7 @@ const routePoints = [
   },
   {
     name: "Židovská čtvrť",
-    coords: [50.090,14.411],
+    coords: [50.089641, 14.417987],
     video: "YOUTUBE_ID_3",
     audio: "audio/zidovska.mp3",
     more: "https://mojedomena.cz/zidovska"
@@ -117,6 +117,7 @@ poiPoints.forEach(p => {
     .addTo(map)
     .bindPopup(p.content);
 });
+
 
 
 
