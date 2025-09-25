@@ -68,6 +68,8 @@ var routeCoords = [
   [50.085309, 14.421289],
   // Melantrichova
   [50.0865,14.4215],
+  // Melantrichova
+  [50.085693, 14.420646],
   // Staroměstské náměstí
   [50.0875,14.4212],
   // Náměstí France Kafky
@@ -117,6 +119,7 @@ poiPoints.forEach(p => {
     .addTo(map)
     .bindPopup(p.content);
 });
+
 
 
 
