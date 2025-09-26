@@ -5,7 +5,7 @@ const map = L.map('map').setView([50.087, 14.420], 14);
 const locateControl = L.control({position: 'bottomright'});
 locateControl.onAdd = function() {
   const div = L.DomUtil.create('div', 'locate-button');
-  div.innerHTML = '🎯';
+  div.innerHTML = '🎯<span>Finde mich</span>';
   div.title = 'Najdi moji polohu';
   div.onclick = () => {
     if (userMarker) {
@@ -181,6 +181,7 @@ poiPoints.forEach(p => {
     .addTo(map)
     .bindPopup(p.content);
 });
+
 
 
 
