@@ -17,3 +17,11 @@
   cursor: pointer;
 }
 .popup-content button.readmore { background: #155; }
+
+.arrow-icon {
+  font-size: 20px;
+  color: blue;
+  font-weight: bold;
+  transform-origin: center;
+}
+
