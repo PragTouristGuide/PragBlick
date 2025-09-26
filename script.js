@@ -1,6 +1,23 @@
 // Inicializace mapy
 const map = L.map('map').setView([50.087, 14.420], 14);
 
+// vytvoření tlačítka "Najdi mě"
+const locateControl = L.control({position: 'bottomright'});
+locateControl.onAdd = function() {
+  const div = L.DomUtil.create('div', 'locate-button');
+  div.innerHTML = '🎯';
+  div.title = 'Najdi moji polohu';
+  div.onclick = () => {
+    if (userMarker) {
+      map.setView(userMarker.getLatLng(), 17);
+    } else {
+      map.locate({setView: true, maxZoom: 17});
+    }
+  };
+  return div;
+};
+locateControl.addTo(map);
+
 // Podklad OpenStreetMap
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; OpenStreetMap'
@@ -164,6 +181,7 @@ poiPoints.forEach(p => {
     .addTo(map)
     .bindPopup(p.content);
 });
+
 
 
 
