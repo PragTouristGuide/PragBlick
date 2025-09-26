@@ -7,7 +7,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 // aktivace geolokace
-map.locate({setView: true, watch: true, maxZoom: 18});
+map.locate({watch: true, maxZoom: 18});
 
 let userMarker;
 let userHeading = 0; // úhel směru (ve stupních)
@@ -164,6 +164,7 @@ poiPoints.forEach(p => {
     .addTo(map)
     .bindPopup(p.content);
 });
+
 
 
 
