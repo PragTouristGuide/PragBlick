@@ -58,7 +58,7 @@ const routePoints = [
   {
     name: "Václavské náměstí",
     coords: [50.082383,14.426169],
-    video: "YOUTUBE_ID_1",
+    video: "https://youtube.com/shorts/0fCOJPyp2C4?feature=share",
     audio: "audio/vaclavske.mp3",
     more: "https://mojedomena.cz/vaclavske"
   },
@@ -164,6 +164,7 @@ poiPoints.forEach(p => {
     .addTo(map)
     .bindPopup(p.content);
 });
+
 
 
 
