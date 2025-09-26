@@ -6,6 +6,48 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; OpenStreetMap'
 }).addTo(map);
 
+// aktivace geolokace
+map.locate({setView: true, watch: true, maxZoom: 18});
+
+let userMarker;
+let userHeading = 0; // úhel směru (ve stupních)
+
+// vlastní ikona šipky
+const arrowIcon = L.divIcon({
+  className: "arrow-icon",
+  html: "&#8593;", // šipka ↑ (můžeš nahradit SVG ikonou)
+  iconSize: [20, 20],
+  iconAnchor: [10, 10]
+});
+
+// poloha GPS
+map.on('locationfound', function(e) {
+  if (userMarker) {
+    userMarker.setLatLng(e.latlng);
+  } else {
+    userMarker = L.marker(e.latlng, {icon: arrowIcon}).addTo(map)
+      .bindPopup("Jste tady");
+  }
+});
+
+// chyba GPS
+map.on('locationerror', function() {
+  alert("Nepodařilo se zjistit vaši polohu. Zkontrolujte nastavení GPS.");
+});
+
+// orientace telefonu (kompas)
+if (window.DeviceOrientationEvent) {
+  window.addEventListener("deviceorientationabsolute", function(event) {
+    if (event.alpha !== null) {
+      userHeading = event.alpha; // azimut
+      if (userMarker) {
+        // otočí šipku podle směru
+        userMarker._icon.style.transform = `rotate(${userHeading}deg)`;
+      }
+    }
+  }, true);
+}
+
 // Hlavní body trasy
 const routePoints = [
   {
@@ -117,6 +159,7 @@ poiPoints.forEach(p => {
     .addTo(map)
     .bindPopup(p.content);
 });
+
 
 
 
