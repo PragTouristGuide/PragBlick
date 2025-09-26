@@ -2,21 +2,36 @@
 #map { height: 100vh; }
 
 /* popup */
-.popup-content { max-width: 250px; }
-.popup-content iframe { width: 100%; height: 400px; }
+.popup-content { max-width: 250px; } 
+.popup-content {
+  width: 90vw;              /* přizpůsobí se šířce mobilního displeje */
+  max-width: 400px;         /* ale na PC nepřesáhne 400px */
+  box-sizing: border-box;
+}
+
+.popup-content iframe {
+  width: 100%;
+  height: 50vw;             /* poměrná výška podle šířky displeje */
+  max-height: 400px;        /* omezení pro desktop */
+  border-radius: 8px;
+}
+
 .popup-content button {
   display: block;
   width: 100%;
-  margin: 6px 0;
-  padding: 10px;
+  margin: 8px 0;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
   background: #0b7;
   color: #fff;
   border: none;
-  border-radius: 6px;
-  font-size: 16px;
   cursor: pointer;
 }
-.popup-content button.readmore { background: #155; }
+
+.popup-content button.readmore {
+  background: #155;
+}
 
 .arrow-icon {
   font-size: 20px;
@@ -26,4 +41,5 @@
   z-index: 9999;
   text-shadow: 0 0 3px white;
 }
+
 
