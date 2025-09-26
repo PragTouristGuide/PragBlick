@@ -25,8 +25,13 @@ map.on('locationfound', function(e) {
   if (userMarker) {
     userMarker.setLatLng(e.latlng);
   } else {
-    userMarker = L.marker(e.latlng, {icon: arrowIcon}).addTo(map)
-      .bindPopup("Jste tady");
+    // modrý bod místo šipky
+    userMarker = L.circleMarker(e.latlng, {
+      radius: 8,
+      color: 'blue',
+      fillColor: 'blue',
+      fillOpacity: 0.6
+    }).addTo(map).bindPopup("Jste tady");
   }
 });
 
@@ -159,6 +164,7 @@ poiPoints.forEach(p => {
     .addTo(map)
     .bindPopup(p.content);
 });
+
 
 
 
