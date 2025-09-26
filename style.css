@@ -65,6 +65,7 @@
   font-size: 12px;
   margin-top: 4px;
   color: #333;
+  display: block; /* zaručí zobrazení textu */
 }
 
 .locate-button:hover {
@@ -72,19 +73,22 @@
   box-shadow: 0 3px 10px rgba(0,0,0,0.3);
 }
 
-/* posun výš na mobilech */
+/* Posun tlačítka výš na mobilech */
 @media (max-width: 768px) {
   .locate-button {
-    margin-bottom: 80px; /* tlačítko výš, aby nebylo přes UI */
+    margin: 20px auto; /* zůstane nahoře uprostřed */
     width: 80px;
     height: 80px;
     font-size: 30px;
+    position: fixed; /* pevně nahoře, aby bylo vždy vidět */
+    top: 10px;       /* 10px od horní hrany obrazovky */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
   }
 
   .locate-button span {
     font-size: 14px;
   }
 }
-
-
 
